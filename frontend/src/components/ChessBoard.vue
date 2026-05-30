@@ -25,7 +25,8 @@
 import { ref, onMounted, watch } from 'vue'
 import { Chess } from 'chess.js'
 import { Chessground } from 'chessground'
-import 'chessground/index.css'
+import 'chessground/assets/chessground.base.css'
+import 'chessground/assets/chessground.cburnett.css'
 
 const props = defineProps<{
   moves: string[]
@@ -91,8 +92,7 @@ onMounted(() => {
   if (boardElement.value) {
     cg.value = Chessground(boardElement.value, {
       movable: {
-        free: false,
-        dests: {}
+        free: false
       },
       animation: {
         enabled: true,
